@@ -32,8 +32,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        }
     }
     buildFeatures {
         compose = true
@@ -61,7 +63,7 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     // Coil
-    implementation(libs.coil-compose)
+    implementation(libs.coil.compose)
 
     // DataStore
     implementation(libs.androidx.datastore.preferences)

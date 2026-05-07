@@ -1,5 +1,5 @@
 [versions]
-agp = "8.7.3"
+agp = "8.13.2"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -48,7 +48,7 @@ coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coi
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 
 # Generative AI (Gemini)
-generativeai = { group = "com.google.android.generativeai", name = "generativeai", version.ref = "generativeAi" }
+generativeai = { group = "com.google.ai.client.generativeai", name = "generativeai", version.ref = "generativeAi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
