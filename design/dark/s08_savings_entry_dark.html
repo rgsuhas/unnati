@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weekly Savings Entry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffddb8",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-surface": "#e8dfee",
+                        "background": "#15121b",
+                        "surface-container-low": "#1d1a24",
+                        "outline-variant": "#4a4455",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-tertiary": "#4f2500",
+                        "on-background": "#e8dfee",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "surface-container-lowest": "#100d16",
+                        "on-surface-variant": "#ccc3d8",
+                        "primary-container": "#7c3aed",
+                        "on-primary": "#3f008e",
+                        "tertiary-fixed": "#ffdcc6",
+                        "secondary-container": "#ee9800",
+                        "on-tertiary-fixed": "#301400",
+                        "tertiary-container": "#a15100",
+                        "surface": "#15121b",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "surface-dim": "#15121b",
+                        "on-tertiary-container": "#ffe0cd",
+                        "outline": "#958da1",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-primary-container": "#ede0ff",
+                        "surface-container": "#221e28",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "surface-container-highest": "#37333e",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "inverse-surface": "#e8dfee",
+                        "inverse-primary": "#732ee4",
+                        "primary": "#d2bbff",
+                        "on-secondary-container": "#5b3800",
+                        "secondary": "#ffb95f",
+                        "inverse-on-surface": "#332f39",
+                        "on-primary-fixed": "#25005a",
+                        "on-error": "#690005",
+                        "on-secondary": "#472a00",
+                        "surface-variant": "#37333e",
+                        "surface-container-high": "#2c2833",
+                        "surface-bright": "#3c3742",
+                        "error-container": "#93000a",
+                        "tertiary": "#ffb784",
+                        "surface-tint": "#d2bbff",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#eaddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "md": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "label-sm": ["Noto Sans"],
+                        "label-md": ["Noto Sans"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Noto Sans"],
+                        "body-md": ["Noto Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(29, 26, 36, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="bg-white/70 dark:bg-inverse-surface/70 backdrop-blur-xl border-b-[1.5px] border-white/40 dark:border-white/10 shadow-[0px_12px_32px_rgba(124,58,237,0.1)] flex items-center justify-between px-[20px] h-[64px] w-full sticky top-0 z-50">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-primary-container/20 dark:hover:bg-primary-fixed/10 rounded-full p-2 active:scale-95 transition-transform duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Mahila-Shakti Unnati</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col px-margin-mobile pt-md pb-[120px] gap-lg w-full max-w-4xl mx-auto">
+<!-- Header & Date Picker -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Weekly Entry</h2>
+<div class="glass-panel rounded-[24px] p-md flex items-center justify-between">
+<button class="p-2 rounded-full hover:bg-white/5 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="font-label-md text-label-md text-secondary">Week 12</span>
+<span class="font-body-md text-body-md text-on-surface">Oct 16 - Oct 22, 2023</span>
+</div>
+<button class="p-2 rounded-full hover:bg-white/5 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Amount Input -->
+<section class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">Standard Contribution</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 font-headline-md text-headline-md text-on-surface-variant">₹</span>
+<input class="w-full bg-surface-container-low border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary rounded-[24px] py-4 pl-[48px] pr-md font-headline-md text-headline-md text-on-surface h-[64px] outline-none transition-colors" type="number" value="500"/>
+</div>
+</section>
+<!-- Member List -->
+<section class="flex flex-col gap-md">
+<div class="flex justify-between items-end px-xs">
+<h3 class="font-headline-md text-headline-md text-on-surface">Members (15)</h3>
+<span class="font-label-md text-label-md text-on-surface-variant">Toggle status</span>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Member Row 1: Paid -->
+<div class="glass-panel rounded-[24px] p-sm flex items-center justify-between gap-md">
+<div class="flex items-center gap-sm flex-1">
+<div class="w-[48px] h-[48px] rounded-full overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a mature Indian woman looking confident. Warm, soft lighting highlights her features. The setting is indoors with a blurred, dark background. The image has a sophisticated, empowering mood consistent with a modern finance application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw_sLhuIh_UOr5Fqpe3JOFhf4E28hK8vnSG9fr1jV6KBA195tUfeoxZntppRQQPMesYIlqRMT9eZet3IavhOsFnTpxSnbHIyinKi0QHH9629RGk-m8NVR3BteJdysRc4fi7T-2Qf7pRXByQn_L2iyFvVkGai3T8p9UCd6xxne9B2uN4w4whmjwbgO17TzXLO62DWt_nyRYwVVPbAT7XG0xMyMtChjXugXxjSZ46n1DkNWS1pBmaQS0Snchb51nioM7zAtPXD8WQsg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Amina Begum</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: MSU-001</span>
+</div>
+</div>
+<button class="h-[40px] px-md rounded-full bg-primary/20 text-primary border border-primary/30 font-label-md text-label-md flex items-center gap-2 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+                        PAID
+                    </button>
+</div>
+<!-- Member Row 2: Pending -->
+<div class="glass-panel rounded-[24px] p-sm flex items-center justify-between gap-md">
+<div class="flex items-center gap-sm flex-1">
+<div class="w-[48px] h-[48px] rounded-full overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A portrait of a young South Asian woman smiling gently. The lighting is studio quality, warm and inviting. The background is a deep, blurred charcoal to maintain the dark mode aesthetic. The mood is friendly and approachable, suitable for a trusted community app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKfi7Pcg3dKJ330xLSnqcqOaSrjlA0Vj5zlUZitOMlaLhrAXo6Qdt4g-P2CeB0-nT5q3UtXUPX_fa5qUFBsbwrfcTYWW5BF3N06k2E1DCn8DSLjiYoNdozoDPn0NDcPAsZr-0roOXP07jXnAgy8Uk9xqaswBHmof4YDwRzM4Vt-pVE9p9pf1zZX-snqlLsHBJobiHdgVXPqj-xgM64Jb4GkBnmBJy5iPAeC7Fbx46dtag5DJlu_1TLZCzSAVArcBFZjP79llU1Fy0"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Sunita Devi</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: MSU-002</span>
+</div>
+</div>
+<button class="h-[40px] px-md rounded-full bg-secondary/10 text-secondary border border-secondary/30 font-label-md text-label-md flex items-center gap-2 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="pending">pending</span>
+                        PENDING
+                    </button>
+</div>
+<!-- Member Row 3: Paid -->
+<div class="glass-panel rounded-[24px] p-sm flex items-center justify-between gap-md">
+<div class="flex items-center gap-sm flex-1">
+<div class="w-[48px] h-[48px] rounded-full overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Portrait of an older woman with a serene expression. Natural, soft light illuminates her face against a dark, moody background. The overall aesthetic is dignified and respectful, perfectly matching a professional financial tool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOI4RdK1IWbQ9TFFJ7Wh-RZwBoTqVpRJSMLVan_61gShxT2YElGGYiOLJFxH6l3mp4kusaaUKL523XKBbIErqSg71Tf533KVzSGRPvRtGwjf_1kuOV8zC5n8h5p6wmsaPujbc4yNwcDe6gysamxQuyhqnkvU4RtgcPsPxGQJrBlAtT-4ZvzVddejRlrXbmfLGBGkQoJdrrsD1zkC0hHQlAqxJiJWOB5-FHuLqoaZOBBiSjVeVwBXnjD1mvjYFfJW9o2M72_8hSG2k"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Lakshmi Bai</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: MSU-003</span>
+</div>
+</div>
+<button class="h-[40px] px-md rounded-full bg-primary/20 text-primary border border-primary/30 font-label-md text-label-md flex items-center gap-2 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+                        PAID
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Hidden on this specific page based on intent, replaced by Sticky Action Footer) -->
+<!-- Applying "Automatic Suppression: Task-Focused" rule -> Suppressing standard BottomNavBar, creating sticky action footer -->
+<div class="fixed bottom-0 left-0 w-full z-40 bg-surface-container-high/90 backdrop-blur-lg border-t border-white/5 p-margin-mobile pb-safe flex flex-col gap-sm shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center px-xs">
+<span class="font-body-md text-body-md text-on-surface-variant">Total Collected</span>
+<span class="font-headline-md text-headline-md text-secondary">₹ 7,000</span>
+</div>
+<button class="w-full h-[56px] rounded-[24px] bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+            Save All Entries
+        </button>
+</div>
+</body></html>
+
+<!-- Member List (Dark) -->

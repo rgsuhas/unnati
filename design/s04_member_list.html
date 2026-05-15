@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>S-04 Member List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e3e1ed",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eeecf8",
+                        "on-primary-container": "#ede0ff",
+                        "on-secondary-container": "#684000",
+                        "surface": "#fbf8ff",
+                        "primary-fixed": "#eaddff",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "secondary-fixed": "#ffddb8",
+                        "inverse-on-surface": "#f1effb",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "outline": "#7b7487",
+                        "primary-fixed-dim": "#d2bbff",
+                        "tertiary-container": "#656767",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface-bright": "#fbf8ff",
+                        "surface-container-high": "#e9e7f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#25005a",
+                        "surface-container-low": "#f4f2fe",
+                        "on-background": "#1a1b23",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary": "#630ed4",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-surface": "#1a1b23",
+                        "secondary-container": "#fea619",
+                        "surface-dim": "#dad9e4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#d2bbff",
+                        "primary-container": "#7c3aed",
+                        "surface-tint": "#732ee4",
+                        "background": "#fbf8ff",
+                        "secondary": "#855300",
+                        "on-tertiary-container": "#e5e6e6",
+                        "outline-variant": "#ccc3d8",
+                        "tertiary": "#4d4f4f",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface-container-highest": "#e3e1ed",
+                        "inverse-surface": "#2f3039",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-surface-variant": "#4a4455"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "56px",
+                        "unit": "8px",
+                        "stack-lg": "40px",
+                        "gutter": "16px",
+                        "margin-page": "24px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "label-xl": ["Noto Sans"],
+                        "body-lg": ["Noto Sans"],
+                        "label-md": ["Noto Sans"],
+                        "headline-md": ["Poppins"],
+                        "display-lg": ["Poppins"],
+                        "title-sm": ["Poppins"],
+                        "body-md": ["Noto Sans"]
+                    },
+                    "fontSize": {
+                        "label-xl": ["18px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "title-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .backdrop-blur-xl { backdrop-filter: blur(24px); }
+        .backdrop-blur-md { backdrop-filter: blur(12px); }
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+        }
+        body { background-color: #F5F3FF; } /* Level 1 Base Lavender Mist approximation */
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased text-on-background min-h-screen relative pb-32">
+<!-- TopAppBar -->
+<header class="bg-white/70 backdrop-blur-xl border-b-[1.5px] border-white/40 shadow-[0px_12px_32px_rgba(124,58,237,0.1)] flex items-center justify-between px-margin-page h-touch-target-min w-full sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:bg-primary-container/20 rounded-full h-10 w-10 flex items-center justify-center active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Mahila-Shakti Unnati</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:bg-primary-container/20 rounded-full h-10 w-10 flex items-center justify-center active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="px-margin-page py-stack-md max-w-3xl mx-auto flex flex-col gap-unit">
+<!-- Search Bar Container -->
+<div class="glass-card rounded-[24px] p-2 flex items-center mb-stack-sm focus-within:border-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-outline pl-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface placeholder:text-outline outline-none px-2" placeholder="Search members..." type="text"/>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto pb-2 mb-stack-sm no-scrollbar">
+<button class="glass-card rounded-full px-4 py-2 font-label-md text-label-md text-on-surface-variant whitespace-nowrap active:bg-primary active:text-on-primary">All Members</button>
+<button class="glass-card rounded-full px-4 py-2 font-label-md text-label-md text-on-surface-variant whitespace-nowrap active:bg-primary active:text-on-primary">Paid</button>
+<button class="glass-card rounded-full px-4 py-2 font-label-md text-label-md text-on-surface-variant whitespace-nowrap active:bg-primary active:text-on-primary">Due</button>
+</div>
+<!-- Member List -->
+<div class="flex flex-col gap-3">
+<!-- Member Row 1 -->
+<div class="glass-card rounded-[24px] p-4 flex items-center gap-4 hover:shadow-[0px_4px_12px_rgba(124,58,237,0.05)] transition-shadow">
+<img alt="Priya Sharma" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" data-alt="A close-up portrait of a cheerful South Asian rural woman with a bright smile, set against a soft, bright background. The lighting is warm and natural, emphasizing a sense of community and trust. The visual style is soft glassmorphism with subtle highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLMS_sksuSzZEaedrvvN_lsnoDyC77dWlcdb-Ru5-K4tF-uzOGKOmqIXYJQ9R-4uTXHvJ4IWkSeb_H_JMy_I0Y3zrzQOwjNPzTg4RJDlPL1ZnLv9rcaZ_Liq3t-mSB5nKpLhUXWvagpgJfDy9bvQtMoQbOuPz0rGtadbuaYw1B_bwaxxY99jfEbQ6fiM6SHiPsIlONOR3MjC-EEn6X5vGz9J2dJosLN8IlqFpvTQRYeYmD0Fi638MkfUVtI8OTMr56soFj_0WJzQc"/>
+<div class="flex-1">
+<h2 class="font-title-sm text-title-sm text-on-surface">Priya Sharma</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span> +91 98765 43210
+                    </p>
+</div>
+<div class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Paid
+                </div>
+</div>
+<!-- Member Row 2 -->
+<div class="glass-card rounded-[24px] p-4 flex items-center gap-4 hover:shadow-[0px_4px_12px_rgba(124,58,237,0.05)] transition-shadow">
+<img alt="Meena Patil" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" data-alt="A portrait of an older South Asian woman looking confident and calm, bathed in soft daylight. The background is a minimalist, airy setting. The aesthetic aligns with a modern, empowering digital environment featuring deep violet and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdecuU0ab8S9nSCD65YtaujMr9jfLzlvTW0HlOSTmRNcEAq7OJ9WoDHHZqHgtCzDdzfrrltr0pSiDztqH-bH7TIpTZuOyCvy9mM1XFdeG9sB22SmTjLQ-NSGoFfSQYOZmc8RzVWrW1_Bjvf-2JMNpRqEiS2gpMBJRnw12L56LZvXiWGkbWaI-lO4gSXg4LpjLKpTPdfnCnInEhD3TxAELQQQPjQXgAZpqA8DQd2YBNtzz2iTdWXaDhQ0RTQEeKienYxoW3eDd6Yu8"/>
+<div class="flex-1">
+<h2 class="font-title-sm text-title-sm text-on-surface">Meena Patil</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span> +91 87654 32109
+                    </p>
+</div>
+<div class="bg-secondary-container/20 text-secondary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Due
+                </div>
+</div>
+<!-- Member Row 3 -->
+<div class="glass-card rounded-[24px] p-4 flex items-center gap-4 hover:shadow-[0px_4px_12px_rgba(124,58,237,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center border-2 border-white shadow-sm text-primary font-title-sm text-title-sm">
+                    SK
+                </div>
+<div class="flex-1">
+<h2 class="font-title-sm text-title-sm text-on-surface">Sunita Kaur</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span> +91 76543 21098
+                    </p>
+</div>
+<div class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Paid
+                </div>
+</div>
+<!-- Member Row 4 -->
+<div class="glass-card rounded-[24px] p-4 flex items-center gap-4 hover:shadow-[0px_4px_12px_rgba(124,58,237,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center border-2 border-white shadow-sm text-secondary font-title-sm text-title-sm">
+                    AR
+                </div>
+<div class="flex-1">
+<h2 class="font-title-sm text-title-sm text-on-surface">Asha Rao</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span> +91 65432 10987
+                    </p>
+</div>
+<div class="bg-secondary-container/20 text-secondary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Due
+                </div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-white/70 backdrop-blur-xl border-t-[1.5px] border-white/40 shadow-[0px_-4px_24px_rgba(124,58,237,0.05)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[80px] px-gutter pb-safe md:hidden rounded-t-[24px]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:bg-primary/5 transition-colors active:scale-90 duration-200 w-full h-full rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold gap-1 hover:bg-primary/5 transition-colors active:scale-90 duration-200 w-full h-full rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-md text-label-md">Members</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:bg-primary/5 transition-colors active:scale-90 duration-200 w-full h-full rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="savings">savings</span>
+<span class="font-label-md text-label-md">Savings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:bg-primary/5 transition-colors active:scale-90 duration-200 w-full h-full rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Loans</span>
+</a>
+</nav>
+</body></html>
+
+<!-- Member List -->

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>S-09 Dashboard (Admin)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "secondary-fixed": "#ffddb8",
+                            "on-secondary-fixed": "#2a1700",
+                            "on-surface": "#e8dfee",
+                            "background": "#15121b",
+                            "surface-container-low": "#1d1a24",
+                            "outline-variant": "#4a4455",
+                            "primary-fixed-dim": "#d2bbff",
+                            "on-tertiary": "#4f2500",
+                            "on-background": "#e8dfee",
+                            "on-tertiary-fixed-variant": "#713700",
+                            "surface-container-lowest": "#100d16",
+                            "on-surface-variant": "#ccc3d8",
+                            "primary-container": "#7c3aed",
+                            "on-primary": "#3f008e",
+                            "tertiary-fixed": "#ffdcc6",
+                            "secondary-container": "#ee9800",
+                            "on-tertiary-fixed": "#301400",
+                            "tertiary-container": "#a15100",
+                            "surface": "#15121b",
+                            "on-error-container": "#ffdad6",
+                            "tertiary-fixed-dim": "#ffb784",
+                            "surface-dim": "#15121b",
+                            "on-tertiary-container": "#ffe0cd",
+                            "outline": "#958da1",
+                            "on-secondary-fixed-variant": "#653e00",
+                            "on-primary-container": "#ede0ff",
+                            "surface-container": "#221e28",
+                            "on-primary-fixed-variant": "#5a00c6",
+                            "surface-container-highest": "#37333e",
+                            "secondary-fixed-dim": "#ffb95f",
+                            "inverse-surface": "#e8dfee",
+                            "inverse-primary": "#732ee4",
+                            "primary": "#d2bbff",
+                            "on-secondary-container": "#5b3800",
+                            "secondary": "#ffb95f",
+                            "inverse-on-surface": "#332f39",
+                            "on-primary-fixed": "#25005a",
+                            "on-error": "#690005",
+                            "on-secondary": "#472a00",
+                            "surface-variant": "#37333e",
+                            "surface-container-high": "#2c2833",
+                            "surface-bright": "#3c3742",
+                            "error-container": "#93000a",
+                            "tertiary": "#ffb784",
+                            "surface-tint": "#d2bbff",
+                            "error": "#ffb4ab",
+                            "primary-fixed": "#eaddff"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "xl": "64px",
+                            "base": "8px",
+                            "sm": "12px",
+                            "lg": "40px",
+                            "xs": "4px",
+                            "gutter": "16px",
+                            "md": "24px",
+                            "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                            "headline-lg": ["Montserrat"],
+                            "label-sm": ["Noto Sans"],
+                            "label-md": ["Noto Sans"],
+                            "headline-md": ["Montserrat"],
+                            "body-lg": ["Noto Sans"],
+                            "body-md": ["Noto Sans"]
+                    },
+                    "fontSize": {
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(44, 40, 51, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(210, 187, 255, 0.1);
+            border-left: 1px solid rgba(210, 187, 255, 0.1);
+            border-right: 1px solid rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+        .glass-panel {
+            background: rgba(29, 26, 36, 0.6);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-[100px] md:pb-0">
+<!-- TopAppBar (From JSON) -->
+<header class="bg-white/70 dark:bg-inverse-surface/70 backdrop-blur-xl docked full-width top-0 border-b-[1.5px] border-white/40 dark:border-white/10 shadow-[0px_12px_32px_rgba(124,58,237,0.1)] flex items-center justify-between px-margin-mobile h-[72px] w-full sticky top-0 z-50">
+<div class="flex items-center gap-gutter">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-primary-container/20 dark:hover:bg-primary-fixed/10 rounded-full p-2 active:scale-95 transition-transform duration-200 flex items-center justify-center h-12 w-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Mahila-Shakti Unnati</h1>
+</div>
+<div class="hidden md:flex gap-md">
+<button class="text-primary dark:text-primary-fixed-dim font-bold flex items-center gap-xs hover:bg-primary-container/20 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2 transition-transform duration-200">
+<span class="material-symbols-outlined">home</span> Home
+             </button>
+<button class="text-on-surface-variant dark:text-surface-variant flex items-center gap-xs hover:bg-primary-container/20 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2 transition-transform duration-200">
+<span class="material-symbols-outlined">group</span> Members
+             </button>
+<button class="text-on-surface-variant dark:text-surface-variant flex items-center gap-xs hover:bg-primary-container/20 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2 transition-transform duration-200">
+<span class="material-symbols-outlined">savings</span> Savings
+             </button>
+<button class="text-on-surface-variant dark:text-surface-variant flex items-center gap-xs hover:bg-primary-container/20 dark:hover:bg-primary-fixed/10 rounded-full px-4 py-2 transition-transform duration-200">
+<span class="material-symbols-outlined">account_balance_wallet</span> Loans
+             </button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-lg py-md md:py-lg space-y-md md:space-y-lg">
+<!-- Hero Card: Group Capital -->
+<section class="glass-card rounded-[24px] p-md md:p-lg relative overflow-hidden flex flex-col justify-between min-h-[200px]">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-wider">Total Group Capital</h2>
+<div class="flex items-baseline gap-sm mb-xs">
+<span class="font-headline-lg text-[48px] leading-[56px] text-on-surface font-bold tracking-tight">₹4,52,000</span>
+<span class="font-label-md text-label-md text-secondary flex items-center bg-secondary/10 px-2 py-1 rounded-full border border-secondary/20">
+<span class="material-symbols-outlined text-[16px] mr-1">trending_up</span> +12%
+                    </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Since last collection meeting</p>
+</div>
+<!-- Decorative Chart Graphic -->
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-30 pointer-events-none flex items-end">
+<svg class="w-full h-full object-cover" preserveaspectratio="none" viewbox="0 0 200 100">
+<path d="M0,100 L0,80 Q25,90 50,70 T100,50 T150,30 T200,10 L200,100 Z" fill="url(#hero-gradient)"></path>
+<defs>
+<lineargradient id="hero-gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#d2bbff" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#d2bbff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-sm md:gap-md">
+<!-- Pending Dues -->
+<div class="glass-card rounded-[24px] p-md flex items-center justify-between">
+<div>
+<h3 class="font-label-md text-label-md text-primary-fixed-dim mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">warning</span> Pending Dues
+                    </h3>
+<div class="font-headline-md text-headline-md text-on-surface">₹12,400</div>
+<div class="font-label-sm text-label-sm text-error mt-1">3 members delayed</div>
+</div>
+<div class="h-12 w-12 rounded-full bg-error-container/20 border border-error/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+</div>
+<!-- Active Loans -->
+<div class="glass-card rounded-[24px] p-md flex items-center justify-between">
+<div>
+<h3 class="font-label-md text-label-md text-secondary mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">account_balance</span> Active Loans
+                    </h3>
+<div class="font-headline-md text-headline-md text-on-surface">₹2,10,000</div>
+<div class="font-label-sm text-label-sm text-secondary-fixed mt-1">14 ongoing</div>
+</div>
+<div class="h-12 w-12 rounded-full bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">credit_score</span>
+</div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md px-2">Quick Actions</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<button class="glass-card rounded-[24px] p-sm md:p-md flex flex-col items-center justify-center gap-sm hover:bg-primary-container/10 transition-colors border border-transparent hover:border-primary/20 group h-[120px]">
+<div class="bg-primary/10 text-primary p-3 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">person_add</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Add Member</span>
+</button>
+<button class="glass-card rounded-[24px] p-sm md:p-md flex flex-col items-center justify-center gap-sm hover:bg-primary-container/10 transition-colors border border-transparent hover:border-primary/20 group h-[120px]">
+<div class="bg-secondary/10 text-secondary p-3 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">payments</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Log Savings</span>
+</button>
+<button class="glass-card rounded-[24px] p-sm md:p-md flex flex-col items-center justify-center gap-sm hover:bg-primary-container/10 transition-colors border border-transparent hover:border-primary/20 group h-[120px]">
+<div class="bg-tertiary/10 text-tertiary p-3 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">real_estate_agent</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Approve Loan</span>
+</button>
+<button class="glass-card rounded-[24px] p-sm md:p-md flex flex-col items-center justify-center gap-sm hover:bg-primary-container/10 transition-colors border border-transparent hover:border-primary/20 group h-[120px]">
+<div class="bg-outline/10 text-outline-variant p-3 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">summarize</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Reports</span>
+</button>
+</div>
+</section>
+<!-- Recent Activity Bento -->
+<section class="glass-card rounded-[24px] p-md">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Activity</h3>
+<button class="font-label-md text-label-md text-primary hover:underline">View All</button>
+</div>
+<div class="space-y-sm">
+<!-- Activity Item 1 -->
+<div class="bg-surface-container-high/50 rounded-xl p-sm flex items-center justify-between border border-white/5">
+<div class="flex items-center gap-sm">
+<div class="h-10 w-10 rounded-full bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Savings Collection</p>
+<p class="font-body-md text-[13px] text-on-surface-variant">Lakshmi Devi • Today, 10:30 AM</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-secondary">+₹500</span>
+</div>
+<!-- Activity Item 2 -->
+<div class="bg-surface-container-high/50 rounded-xl p-sm flex items-center justify-between border border-white/5">
+<div class="flex items-center gap-sm">
+<div class="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Loan Disbursed</p>
+<p class="font-body-md text-[13px] text-on-surface-variant">Sunita Sharma • Yesterday, 2:15 PM</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-primary">-₹10,000</span>
+</div>
+<!-- Activity Item 3 -->
+<div class="bg-surface-container-high/50 rounded-xl p-sm flex items-center justify-between border border-white/5">
+<div class="flex items-center gap-sm">
+<div class="h-10 w-10 rounded-full bg-outline/10 text-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">New Member Added</p>
+<p class="font-body-md text-[13px] text-on-surface-variant">Meera Bai • Oct 12, 09:00 AM</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (From JSON) -->
+<nav class="md:hidden bg-white/70 dark:bg-inverse-surface/70 backdrop-blur-xl docked full-width bottom-0 rounded-t-[24px] border-t-[1.5px] border-white/40 dark:border-white/10 shadow-[0px_-4px_24px_rgba(124,58,237,0.05)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[80px] px-gutter pb-safe">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold gap-1 active:scale-90 transition-transform duration-200 hover:bg-primary/5 rounded-lg p-2 w-16">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-[11px]">Home</span>
+</button>
+<!-- Members -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant gap-1 active:scale-90 transition-transform duration-200 hover:bg-primary/5 rounded-lg p-2 w-16">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-[11px]">Members</span>
+</button>
+<!-- Savings -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant gap-1 active:scale-90 transition-transform duration-200 hover:bg-primary/5 rounded-lg p-2 w-16">
+<span class="material-symbols-outlined">savings</span>
+<span class="font-label-md text-[11px]">Savings</span>
+</button>
+<!-- Loans -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant gap-1 active:scale-90 transition-transform duration-200 hover:bg-primary/5 rounded-lg p-2 w-16">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md text-[11px]">Loans</span>
+</button>
+</nav>
+</body></html>
+
+<!-- New Loan Form (Dark) -->
