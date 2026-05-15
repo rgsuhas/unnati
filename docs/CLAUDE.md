@@ -11,12 +11,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Map
 
 ```
-docs/PRD.md                  — Full product requirements (source of truth)
-docs/APP_FLOWS_AND_VIEWS.md  — All 16 screens with ASCII layouts + Kotlin dev prompts
-docs/GEMINI.md               — Gemini API integration context and prompts
-docs/DESIGN_SYSTEM.md        — Design tokens, color palette, component guidelines
-CLAUDE.md                    — This file (AI assistant config, stays at root)
-design/                      — Interactive HTML prototypes (light + dark)
+PRD.md                  — Full product requirements (source of truth)
+APP_FLOWS_AND_VIEWS.md  — All 16 screens with ASCII layouts + Kotlin dev prompts
+GEMINI.md               — Gemini API integration context and prompts
+CLAUDE.md               — This file
 ```
 
 ---
